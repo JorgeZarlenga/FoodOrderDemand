@@ -2,24 +2,52 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FIAP - Servlets</title>
+<title>Food Order Demand</title>
 </head>
 <body>
-	<h1>Cadastro de Produto</h1>
-	<form action="produto" method="post">
+	<h1>Cadastro de Restaurante</h1>
+	<form action="restaurante" method="post">
 		<div>
-			<label for="id-nome">Nome</label>
-			<input type="text" name="nome" id="id-nome">
+			<label for="id-nome-restaurante">Nome do Restaurante:</label>
+			<input type="text" name="nome-restaurante" id="id-nome-restaurante">
 		</div>
 		<div>
-			<label for="id-qtd">Quantidade</label>
-			<input type="text" name="quantidade" id="id-qtd">
+			<label for="id-cep">CEP:</label>
+			<input type="text" name="cep" id="id-cep">
 		</div>
 		<div>
-			<label for="id-valor">Valor</label>
-			<input type="text" name="valor" id="id-valor">
+			<label for="id-numero-logradouro">Número:</label>
+			<input type="text" name="numero-logradouro" id="id-numero-logradouro">
 		</div>
-		<input type="submit" value="Salvar">
+		<div>
+			<label for="id-hora-inicio-funcionamento">Hora de início do funcionamento:</label>
+			<input type="time" name="hora-inicio-funcionamento" id="id-hora-inicio-funcionamento">
+		</div>
+		<div>
+			<label for="id-hora-termino-funcionamento">Hora de término do funcionamento:</label>
+			<input type="time" name="hora-termino-funcionamento" id="id-hora-inicio-funcionamento">
+		</div>
+		<div>
+			<label for="id-categoria">Categoria:</label>
+			<input type="text" name="categoria" id="id-categoria">
+		</div>
+		<div>
+			<label for="id-avaliacao">Avaliação (0 - 10):</label>
+			<input type="text" name="avaliacao" id="id-avaliacao">
+		</div>
+		<div>
+			<label for="id-quantidade-cozinheiros">Quantidade de cozinheiros:</label>
+			<input type="text" name="quantidade-cozinheiros" id="id-quantidade-cozinheiros">
+		</div>
+		<div>
+			<label for="id-quantidade-entregadores">Quantidade de entregadores:</label>
+			<input type="text" name="quantidade-entregadores" id="id-quantidade-entregadores">
+		</div>
+		<div>
+			<label for="id-raio-atuacao-km">Raio de atuação (km):</label>
+			<input type="text" name="raio-atuacao-km" id="id-raio-atuacao-km">
+		</div>
+		<input type="submit" value="Cadastrar">
 	</form>
 </body>
 </html>

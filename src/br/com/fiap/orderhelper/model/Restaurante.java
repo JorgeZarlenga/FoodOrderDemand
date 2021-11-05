@@ -3,6 +3,8 @@ package br.com.fiap.orderhelper.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
+
 
 /**
  * Classe que abstrai o Restaurante
