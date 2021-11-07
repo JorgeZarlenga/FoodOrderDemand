@@ -1,20 +1,28 @@
+<%@page import="br.com.fiap.foodOrderDemand.model.Restaurante"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<title>Insights</title>
-</head>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Restaurantes</title>
+  </head>
 <body>
 
-<<<<<<< HEAD
-	<div class="container" class="home">		
+	<div class="container">		
 		
 		<h1>Cadastro de Restaurante</h1>
-		<form action="exibirRestaurante" method="post">
+		<a href="listarRestaurantes" class="btn btn-info">Voltar</a>
+		<form action="exibirRestaurante" method="get">
 			<div>
 				<label for="id-nome-restaurante">Nome do Restaurante:</label>
 				<input type="text" name="nome-restaurante" id="id-nome-restaurante">
@@ -58,9 +66,5 @@
 			<input type="submit" value="Cadastrar">
 		</form>
 	</div>
-=======
-<a href="listarRestaurantes" class="btn btn-success">Mostrar restaurantes</a>
-
->>>>>>> 9d57843fe0834ef42435d031356a88fa4826b00e
 </body>
 </html>
