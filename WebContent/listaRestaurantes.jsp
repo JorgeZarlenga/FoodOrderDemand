@@ -22,23 +22,34 @@
 
 	<div class="container">
 	
-		<h1>Restaurante cadastrado com sucesso!</h1>
-		<h2>Dados:</h2>
-		<p>Nome do Restaurante:</p>
-		<p>CEP:</p>
-		<p>Número:</p>
-		<p>Hora de início do funcionamento:</p>
-		<p>Hora de término do funcionamento:</p>
-		<p>Categoria:</p>
-		<p>Avaliação (0 - 10):</p>
-		<p>Quantidade de cozinheiros:</p>
-		<p>Quantidade de entregadores:</p>
-		<p>Raio de atuação (km):</p>
+		<h1>Restaurantes</h1>
+	
+		<a href="cadastrarRestaurante" class="btn btn-primary">Novo Restaurante</a>
 		
-		<a href="#" class="btn btn-danger">Excluir</a>
-		<a href="#" class="btn btn-info">Editar</a>
-		<a href="listarInsights" class="btn btn-success">Mostrar insights</a>
 		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>CEP</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${listaRestaurantes}" var="restaurante">
+					<tr>
+						<td>${restaurante.nomeRestaurante}</td>
+						<td>${restaurante.numeroCep}</td>
+						<td>
+							<a href="#" class="btn btn-success">Detalhes</a>
+							<a href="#" class="btn btn-danger">Excluir</a>
+							<a href="#" class="btn btn-info">Editar</a>
+							<a href="#" class="btn btn-info">Insights</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+
 	</div>
 </body>
 </html>

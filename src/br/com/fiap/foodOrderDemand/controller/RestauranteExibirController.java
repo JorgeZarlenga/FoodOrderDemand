@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.fiap.foodOrderDemand.business.RestauranteBusiness;
 import br.com.fiap.foodOrderDemand.model.Restaurante;
 
-@WebServlet("/exibirRestaurante")
+@WebServlet("/listarRestaurantes")
 public class RestauranteExibirController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,7 +32,7 @@ public class RestauranteExibirController extends HttpServlet {
 		
 		//Web
 		request.setAttribute("listaRestaurantes", listaRestaurantes);
-		RequestDispatcher rd = request.getRequestDispatcher("sucesso.jsp");  
+		RequestDispatcher rd = request.getRequestDispatcher("listaRestaurantes.jsp");  
 		rd.forward(request, response);
 	}
 }
