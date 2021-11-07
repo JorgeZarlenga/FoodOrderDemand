@@ -21,7 +21,7 @@ public class DAO {
 
 	}
 
-	public Connection GetConnection() {
+	public Connection getConnection() {
 		OpenConnection();
 		System.out.println("Conexao aberta com sucesso");
 		return this.connection;
@@ -42,7 +42,7 @@ public class DAO {
 
 	}
 
-	private void CloseConnection() {
+	private void closeConnection() {
 		try {
 			if (this.connection != null) {
 				this.connection.close();
@@ -54,7 +54,7 @@ public class DAO {
 	}
 
 	// resp por exec comandos SQL (insert, update, delete)
-	public int ExecuteCommand(PreparedStatement stmt) {
+	public int executeCommand(PreparedStatement stmt) {
 		int j = 0;
 		try {
 			j = stmt.executeUpdate();
@@ -62,13 +62,13 @@ public class DAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			CloseConnection();
+			closeConnection();
 		}
 		return j;
 	}
 
 //select 
-	public ResultSet GetData(PreparedStatement stmt) {
+	public ResultSet getData(PreparedStatement stmt) {
 		ResultSet resultSet = null;
 		try {
 			resultSet = stmt.executeQuery();
@@ -79,7 +79,7 @@ public class DAO {
 		return resultSet;
 	}
 
-	public int ExecuteProcedure(CallableStatement cs) {
+	public int executeProcedure(CallableStatement cs) {
 
 		try {
 			return cs.executeUpdate();
