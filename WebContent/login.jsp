@@ -20,7 +20,7 @@
 	<div class="mx-auto" style="width: 400px;">
 	<image src="https://logodownload.org/wp-content/uploads/2017/05/ifood-logo-12.png" class="mt-5"/>
 	<h1 class="mt-5">Seja bem-vindo</h1>
-	<h6>Para iniciar, faça login ou realize o seu cadastro.</h6>
+	<h6>Para iniciar, faça login.</h6>
 		<form class="mt-5">
 		  <div class="mb-3">
 		    <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -34,7 +34,6 @@
 		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
 		    <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
 		  </div>
-		  <button type="submit" class="btn btn-secondary">Cadastre-se</button>
 		  <button type="submit" class="btn btn-primary" a href="listarRestaurantes">Entrar</button>
 		</form>
 	</div>	
