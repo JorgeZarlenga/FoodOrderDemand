@@ -28,7 +28,7 @@ public class RestauranteBusiness {
 		lista.add(restaurante);
 		
 		restaurante = new Restaurante();
-		restaurante.setCodRestaurante(1);
+		restaurante.setCodRestaurante(2);
 		restaurante.setNomeRestaurante("Teste 2");
 		restaurante.setNumeroCep("08344000000");
 		restaurante.setNumeroLogradouro(22);

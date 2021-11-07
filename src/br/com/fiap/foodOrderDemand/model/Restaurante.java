@@ -1,9 +1,7 @@
 package br.com.fiap.foodOrderDemand.model;
 
 import java.io.Serializable;
-import java.sql.Time;
 import java.time.LocalDateTime;
-import java.sql.Time;
 
 /**
  * Classe que abstrai o Restaurante
