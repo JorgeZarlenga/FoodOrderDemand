@@ -34,7 +34,8 @@
 		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
 		    <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
 		  </div>
-		  <button type="submit" class="btn btn-primary" a href="listarRestaurantes">Entrar</button>
+		  <a class="btn btn-primary" href="listarRestaurantes">Entrar</a>
+
 		</form>
 	</div>	
 
