@@ -1,20 +1,21 @@
 package br.com.fiap.foodOrderDemand.business;
 
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.fiap.foodOrderDemand.dao.RestauranteDAO;
 import br.com.fiap.foodOrderDemand.model.Restaurante;
 
 public class RestauranteBusiness {
 	public void cadastrar(Restaurante rb) {
 		System.out.println("rb" + rb);
+		RestauranteDAO rdao = new RestauranteDAO();
+		rdao.add(rb);
 		
 	}
 	
 	
-	public List<Restaurante> listarTodos() {
+	/*public List<Restaurante> listarTodos() {
 
         List<Restaurante> lista = new ArrayList<Restaurante>();
 
@@ -50,7 +51,7 @@ public class RestauranteBusiness {
     }
 	
 	
-	/*public List<Restaurante> visualizarRestaurante() { 
+	public List<Restaurante> visualizarRestaurante() { 
 		
 		Restaurante a = new Restaurante();
 		

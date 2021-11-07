@@ -36,8 +36,8 @@ public class RestauranteCadastrarController extends HttpServlet {
 		restaurante.setNomeRestaurante(request.getParameter("nome-restaurante"));
 		restaurante.setNumeroCep(request.getParameter("cep"));
 		restaurante.setNumeroLogradouro(request.getParameter("numero-logradouro"));
-		//restaurante.setHoraInicioFuncionamento(request.getParameter("nome-restaurante"));
-		//restaurante.setHoraTerminoFuncionamento(request.getParameter("nome-restaurante"));
+		restaurante.setHoraInicioFuncionamento(request.getParameter("nome-restaurante"));
+		restaurante.setHoraTerminoFuncionamento(request.getParameter("nome-restaurante"));
 		restaurante.setCategoriaRestaurante(request.getParameter("categoria"));
 		restaurante.setAvaliacao(Integer.parseInt(request.getParameter("avaliacao")));
 		restaurante.setQuantidadeCozinheiros(Integer.parseInt(request.getParameter("quantidade-cozinheiros")));
