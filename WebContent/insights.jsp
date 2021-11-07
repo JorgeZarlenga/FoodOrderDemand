@@ -54,7 +54,7 @@
 			</div>
 		</c:forEach>
 		
-		<a href="#" class="btn btn-info">Voltar</a>
+		<a href="listarRestaurantes" class="btn btn-info">Voltar</a>
 		
 	</div>
 </body>

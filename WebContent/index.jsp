@@ -23,7 +23,7 @@
 	<div class="container">		
 		
 		<h1>Cadastro de Restaurante</h1>
-		<form action="listarRestaurantes" method="get">
+		<form action="exibirRestaurante" method="post">
 			<div>
 				<label for="id-nome-restaurante">Nome do Restaurante:</label>
 				<input type="text" name="nome-restaurante" id="id-nome-restaurante">

@@ -13,11 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.fiap.foodOrderDemand.business.RestauranteBusiness;
 import br.com.fiap.foodOrderDemand.model.Restaurante;
 
-@WebServlet("/listarRestaurantes")
-public class RestauranteController extends HttpServlet {
+@WebServlet("/exibirRestaurante")
+public class RestauranteExibirController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public RestauranteController() {
+    public RestauranteExibirController() {
         super();
     }
 

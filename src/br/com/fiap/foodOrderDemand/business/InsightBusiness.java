@@ -12,9 +12,9 @@ public class InsightBusiness {
 		List<Insight> lista = new ArrayList<Insight>();
 		
 		Insight insight = new Insight();
-		insight.setInsight1("Teste 1");
-		insight.setInsight2("Teste 2");
-		insight.setInsight3("Teste 3");
+		insight.setInsight1("Insight 1");
+		insight.setInsight2("Insight 2");
+		insight.setInsight3("Insight 3");
 
 		lista.add(insight);
 
