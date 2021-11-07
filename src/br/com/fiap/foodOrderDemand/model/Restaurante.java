@@ -1,7 +1,7 @@
 package br.com.fiap.foodOrderDemand.model;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.sql.Time;
 
 /**
  * Classe que abstrai o Restaurante
@@ -18,10 +18,10 @@ public class Restaurante implements Serializable {
 
 	private int codRestaurante;
 	private String nomeRestaurante;
-	private int numeroCep;
+	private String numeroCep;
 	private int numeroLogradouro;
-	private LocalDateTime horaInicioFuncionamento;
-	private LocalDateTime horaTerminoFuncionamento;
+	private Time horaInicioFuncionamento;
+	private Time horaTerminoFuncionamento;
 	private String categoriaRestaurante;
 	private int avaliacao;
 	private int quantidadeCozinheiros;
@@ -36,8 +36,8 @@ public class Restaurante implements Serializable {
 
 	// Construtor que recebe todos parametros:
 
-	public Restaurante(int codRestaurante, String nomeRestaurante, int numeroCep, int numeroLogradouro,
-			LocalDateTime horaInicioFuncionamento, LocalDateTime horaTerminoFuncionamento, String categoriaRestaurante, int avaliacao,
+	public Restaurante(int codRestaurante, String nomeRestaurante, String numeroCep, int numeroLogradouro,
+			Time horaInicioFuncionamento, Time horaTerminoFuncionamento, String categoriaRestaurante, int avaliacao,
 			int quantidadeCozinheiros, int quantidadeEntregadores, double raioAtuacaoKm) {
 		super();
 		this.codRestaurante = codRestaurante;
@@ -71,11 +71,11 @@ public class Restaurante implements Serializable {
 		this.nomeRestaurante = nomeRestaurante;
 	}
 
-	public int getNumeroCep() {
+	public String getNumeroCep() {
 		return numeroCep;
 	}
 
-	public void setNumeroCep(int numeroCep) {
+	public void setNumeroCep(String numeroCep) {
 		this.numeroCep = numeroCep;
 	}
 
@@ -87,19 +87,19 @@ public class Restaurante implements Serializable {
 		this.numeroLogradouro = numeroLogradouro;
 	}
 
-	public LocalDateTime getHoraInicioFuncionamento() {
+	public Time getHoraInicioFuncionamento() {
 		return horaInicioFuncionamento;
 	}
 
-	public void setHoraInicioFuncionamento(LocalDateTime horaInicioFuncionamento) {
+	public void setHoraInicioFuncionamento(Time horaInicioFuncionamento) {
 		this.horaInicioFuncionamento = horaInicioFuncionamento;
 	}
 
-	public LocalDateTime getHoraTerminoFuncionamento() {
+	public Time getHoraTerminoFuncionamento() {
 		return horaTerminoFuncionamento;
 	}
 
-	public void setHoraTerminoFuncionamento(LocalDateTime horaTerminoFuncionamento) {
+	public void setHoraTerminoFuncionamento(Time horaTerminoFuncionamento) {
 		this.horaTerminoFuncionamento = horaTerminoFuncionamento;
 	}
 

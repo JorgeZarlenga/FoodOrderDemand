@@ -25,10 +25,10 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 				Restaurante r = new Restaurante();
 				r.setCodRestaurante(result.getInt("CD_RESTAURANTE"));
 				r.setNomeRestaurante(result.getString("NM_RESTAURANTE"));
-				r.setNumeroCep(result.getInt("NR_CEP"));
+				r.setNumeroCep(result.getString("NR_CEP"));
 				r.setNumeroLogradouro(result.getInt("NR_LOGRADOURO"));
-				// r.setHoraInicioFuncionamento(result.getDate(new LocalDateTime));
-				// r.setHoraTerminoFuncionamento(result.getDate(new LocalDateTime));
+				r.setHoraInicioFuncionamento(result.getTime("HR_INICIO"));
+				r.setHoraTerminoFuncionamento(result.getTime("HR_TERMINO"));
 				r.setCategoriaRestaurante(result.getString("NM_CATEGORIA"));
 				r.setAvaliacao(result.getInt("NR_AVALIACAO"));
 				r.setQuantidadeCozinheiros(result.getInt("NR_COZINHEIROS"));
@@ -60,10 +60,10 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 				Restaurante r = new Restaurante();
 				r.setCodRestaurante(result.getInt("CD_RESTAURANTE"));
 				r.setNomeRestaurante(result.getString("NM_RESTAURANTE"));
-				r.setNumeroCep(result.getInt("NR_CEP"));
+				r.setNumeroCep(result.getString("NR_CEP"));
 				r.setNumeroLogradouro(result.getInt("NR_LOGRADOURO"));
-				// r.setHoraInicioFuncionamento(result.getDate(new LocalDateTime));
-				// r.setHoraTerminoFuncionamento(result.getDate(new LocalDateTime));
+				r.setHoraInicioFuncionamento(result.getTime("HR_INICIO"));
+				r.setHoraTerminoFuncionamento(result.getTime("HR_TERMINO"));
 				r.setCategoriaRestaurante(result.getString("NM_CATEGORIA"));
 				r.setAvaliacao(result.getInt("NR_AVALIACAO"));
 				r.setQuantidadeCozinheiros(result.getInt("NR_COZINHEIROS"));
@@ -87,17 +87,18 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 		try {
 			java.sql.Date data = new java.sql.Date(new java.util.Date().getTime());
 			PreparedStatement stmt = dao.getConnection().prepareStatement(
-					"INSERT INTO T_RESTAURANTE(CD_RESTAURANTE, NM_RESTAURANTE, NR_CEP, NR_LOGRADOURO, HR_INICIO, HR_TERMINO, NM_CATEGORIA, NR_AVALIACAO, NR_COZINHEIROS, NR_ENTREGADORES, NR_RAIO) VALUES (CD_RESTAURANTE.NEXTVAL,?,?,?,?,?,?,?,?,?,?)");
-			stmt.setNomeRestaurante(1, );
-			stmt.setNumeroCep(2, );
-			stmt.setNumeroLogradouro(3, );
-			// stmt.setHoraInicioFuncionamento();
-			// stmt.setHoraTerminoFuncionamento();
-			stmt.setCategoriaRestaurante(4, );
-			stmt.setAvaliacao(5, );
-			stmt.setQuantidadeCozinheiros(6, );
-			stmt.setQuantidadeEntregadores(7, );
-			stmt.setRaioAtuacaoKm(8, );
+					"INSERT INTO T_RESTAURANTE(CD_RESTAURANTE, NM_RESTAURANTE, NR_CEP, NR_LOGRADOURO, HR_INICIO, HR_TERMINO, NM_CATEGORIA, NR_AVALIACAO, "
+							+ "NR_COZINHEIROS, NR_ENTREGADORES, NR_RAIO) VALUES (CD_RESTAURANTE.NEXTVAL,?,?,?,?,?,?,?,?,?,?)");
+			stmt.setString(1, obj.getNomeRestaurante());
+			stmt.setString(2, obj.getNumeroCep());
+			stmt.setInt(3, obj.getNumeroLogradouro());
+			stmt.setTime(4, obj.getHoraInicioFuncionamento());
+			stmt.setTime(5, obj.getHoraTerminoFuncionamento());
+			stmt.setString(6, obj.getCategoriaRestaurante());
+			stmt.setInt(7, obj.getAvaliacao());
+			stmt.setInt(8, obj.getQuantidadeCozinheiros());
+			stmt.setInt(9, obj.getQuantidadeEntregadores());
+			stmt.setDouble(10, obj.getRaioAtuacaoKm());
 			return dao.executeCommand(stmt);
 
 		} catch (SQLException e) {
@@ -130,7 +131,7 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 	public int update(Restaurante obj) {
 
 		DAO dao = new DAO();
-		
+
 		try {
 			PreparedStatement stmt = dao.getConnection()
 					.prepareStatement("UPDATE T_RESTAURANTE SET NM_RESTAURANTE = ? WHERE CD_RESTAURANTE = ?");
