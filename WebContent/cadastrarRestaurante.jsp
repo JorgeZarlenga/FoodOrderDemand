@@ -22,7 +22,7 @@
 		
 		<h1>Cadastro de Restaurante</h1>
 		<a href="listarRestaurantes" class="btn btn-info">Voltar</a>
-		<form action="listarRestaurantes" method="post">
+		<form action="cadastrarRestaurante" method="post">
 			<div>
 				<label for="id-nome-restaurante">Nome do Restaurante:</label>
 				<input type="text" name="nome-restaurante" id="id-nome-restaurante">

@@ -26,7 +26,7 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 				r.setCodRestaurante(result.getInt("CD_RESTAURANTE"));
 				r.setNomeRestaurante(result.getString("NM_RESTAURANTE"));
 				r.setNumeroCep(result.getString("NR_CEP"));
-				r.setNumeroLogradouro(result.getInt("NR_LOGRADOURO"));
+				r.setNumeroLogradouro(result.getString("NR_LOGRADOURO"));
 				r.setHoraInicioFuncionamento(result.getTime("HR_INICIO"));
 				r.setHoraTerminoFuncionamento(result.getTime("HR_TERMINO"));
 				r.setCategoriaRestaurante(result.getString("NM_CATEGORIA"));
@@ -61,7 +61,7 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 				r.setCodRestaurante(result.getInt("CD_RESTAURANTE"));
 				r.setNomeRestaurante(result.getString("NM_RESTAURANTE"));
 				r.setNumeroCep(result.getString("NR_CEP"));
-				r.setNumeroLogradouro(result.getInt("NR_LOGRADOURO"));
+				r.setNumeroLogradouro(result.getString("NR_LOGRADOURO"));
 				r.setHoraInicioFuncionamento(result.getTime("HR_INICIO"));
 				r.setHoraTerminoFuncionamento(result.getTime("HR_TERMINO"));
 				r.setCategoriaRestaurante(result.getString("NM_CATEGORIA"));
@@ -91,7 +91,7 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 					+ "NR_COZINHEIROS, NR_ENTREGADORES, NR_RAIO) VALUES (CD_RESTAURANTE.NEXTVAL,?,?,?,?,?,?,?,?,?,?)");
 			stmt.setString(1, obj.getNomeRestaurante());
 			stmt.setString(2, obj.getNumeroCep());
-			stmt.setInt(3, obj.getNumeroLogradouro());
+			stmt.setString(3, obj.getNumeroLogradouro());
 			stmt.setTime(4, obj.getHoraInicioFuncionamento());
 			stmt.setTime(5, obj.getHoraTerminoFuncionamento());
 			stmt.setString(6, obj.getCategoriaRestaurante());

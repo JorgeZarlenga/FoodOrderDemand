@@ -22,7 +22,7 @@ public class Restaurante implements Serializable {
 	private int codRestaurante;
 	private String nomeRestaurante;
 	private String numeroCep;
-	private int numeroLogradouro;
+	private String numeroLogradouro;
 	private Time horaInicioFuncionamento;
 	private Time horaTerminoFuncionamento;
 	private String categoriaRestaurante;
@@ -39,7 +39,7 @@ public class Restaurante implements Serializable {
 
 	// Construtor que recebe todos parametros:
 
-	public Restaurante(int codRestaurante, String nomeRestaurante, String numeroCep, int numeroLogradouro,
+	public Restaurante(int codRestaurante, String nomeRestaurante, String numeroCep, String numeroLogradouro,
 			Time horaInicioFuncionamento, Time horaTerminoFuncionamento, String categoriaRestaurante, int avaliacao,
 			int quantidadeCozinheiros, int quantidadeEntregadores, double raioAtuacaoKm) {
 		super();
@@ -82,11 +82,11 @@ public class Restaurante implements Serializable {
 		this.numeroCep = numeroCep;
 	}
 
-	public int getNumeroLogradouro() {
+	public String getNumeroLogradouro() {
 		return numeroLogradouro;
 	}
 
-	public void setNumeroLogradouro(int numeroLogradouro) {
+	public void setNumeroLogradouro(String numeroLogradouro) {
 		this.numeroLogradouro = numeroLogradouro;
 	}
 

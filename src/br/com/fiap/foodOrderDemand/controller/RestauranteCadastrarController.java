@@ -32,8 +32,20 @@ public class RestauranteCadastrarController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		System.out.println("Request: " + request);
+		Restaurante restaurante = new Restaurante();
+		restaurante.setNomeRestaurante(request.getParameter("nome-restaurante"));
+		restaurante.setNumeroCep(request.getParameter("cep"));
+		restaurante.setNumeroLogradouro(request.getParameter("numero-logradouro"));
+		//restaurante.setHoraInicioFuncionamento(request.getParameter("nome-restaurante"));
+		//restaurante.setHoraTerminoFuncionamento(request.getParameter("nome-restaurante"));
+		restaurante.setCategoriaRestaurante(request.getParameter("categoria"));
+		restaurante.setAvaliacao(Integer.parseInt(request.getParameter("avaliacao")));
+		restaurante.setQuantidadeCozinheiros(Integer.parseInt(request.getParameter("quantidade-cozinheiros")));
+		restaurante.setQuantidadeEntregadores(Integer.parseInt(request.getParameter("quantidade-entregadores")));
+		restaurante.setRaioAtuacaoKm(Integer.parseInt(request.getParameter("raio-atuacao-km")));
+		System.out.println("Request: " + request.getParameter("nome-restaurante"));
+		RestauranteBusiness rb = new RestauranteBusiness();
+		rb.cadastrar(restaurante);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("listaRestaurantes.jsp");
 		rd.forward(request, response);
