@@ -1,7 +1,8 @@
 package br.com.fiap.foodOrderDemand.model;
 
+
 import java.io.Serializable;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.List;
 
 import br.com.fiap.foodOrderDemand.dao.RestauranteDAO;
@@ -23,8 +24,6 @@ public class Restaurante implements Serializable {
 	private String nomeRestaurante;
 	private String numeroCep;
 	private String numeroLogradouro;
-	private Time horaInicioFuncionamento;
-	private Time horaTerminoFuncionamento;
 	private String categoriaRestaurante;
 	private int avaliacao;
 	private int quantidadeCozinheiros;
@@ -39,16 +38,13 @@ public class Restaurante implements Serializable {
 
 	// Construtor que recebe todos parametros:
 
-	public Restaurante(int codRestaurante, String nomeRestaurante, String numeroCep, String numeroLogradouro,
-			Time horaInicioFuncionamento, Time horaTerminoFuncionamento, String categoriaRestaurante, int avaliacao,
+	public Restaurante(int codRestaurante, String nomeRestaurante, String numeroCep, String numeroLogradouro, String categoriaRestaurante, int avaliacao,
 			int quantidadeCozinheiros, int quantidadeEntregadores, double raioAtuacaoKm) {
 		super();
 		this.codRestaurante = codRestaurante;
 		this.nomeRestaurante = nomeRestaurante;
 		this.numeroCep = numeroCep;
 		this.numeroLogradouro = numeroLogradouro;
-		this.horaInicioFuncionamento = horaInicioFuncionamento;
-		this.horaTerminoFuncionamento = horaTerminoFuncionamento;
 		this.categoriaRestaurante = categoriaRestaurante;
 		this.avaliacao = avaliacao;
 		this.quantidadeCozinheiros = quantidadeCozinheiros;
@@ -88,22 +84,6 @@ public class Restaurante implements Serializable {
 
 	public void setNumeroLogradouro(String numeroLogradouro) {
 		this.numeroLogradouro = numeroLogradouro;
-	}
-
-	public Time getHoraInicioFuncionamento() {
-		return horaInicioFuncionamento;
-	}
-
-	public void setHoraInicioFuncionamento(Time horaInicioFuncionamento) {
-		this.horaInicioFuncionamento = horaInicioFuncionamento;
-	}
-
-	public Time getHoraTerminoFuncionamento() {
-		return horaTerminoFuncionamento;
-	}
-
-	public void setHoraTerminoFuncionamento(Time horaTerminoFuncionamento) {
-		this.horaTerminoFuncionamento = horaTerminoFuncionamento;
 	}
 
 	public String getCategoriaRestaurante() {
@@ -184,5 +164,8 @@ public class Restaurante implements Serializable {
 				+ categoriaRestaurante + ", avaliacao=" + avaliacao + ", quantidadeCozinheiros=" + quantidadeCozinheiros
 				+ ", quantidadeEntregadores=" + quantidadeEntregadores + ", raioAtuacaoKm=" + raioAtuacaoKm + "]";
 	}
+
+	
+
 
 }

@@ -1,6 +1,5 @@
 package br.com.fiap.foodOrderDemand.dao;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,30 +12,23 @@ public class DAO {
 
 	public DAO() {
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName("oracle.jbdc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	public Connection getConnection() {
-		OpenConnection();
-		System.out.println("Conexao aberta com sucesso");
+		openConnection();
+		System.out.println("Conectado com sucesso!");
 		return this.connection;
 	}
 
-	// Responsavel por abrir a conexao
-	private void OpenConnection() {
+	// Respons�vel por abrir a conex�o
+	private void openConnection() {
 		try {
-			this.connection = DriverManager.getConnection
-					  ("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "RM88935", "280191");
-			
-			System.out.println("Conectado!");
-
+			this.connection = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "RM86831", "020996");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -48,18 +40,16 @@ public class DAO {
 				this.connection.close();
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	// resp por exec comandos SQL (insert, update, delete)
+	// Executa comandos SQL (insert, update, delete)
 	public int executeCommand(PreparedStatement stmt) {
 		int j = 0;
 		try {
 			j = stmt.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			closeConnection();
@@ -67,28 +57,20 @@ public class DAO {
 		return j;
 	}
 
-//select 
 	public ResultSet getData(PreparedStatement stmt) {
 		ResultSet resultSet = null;
 		try {
 			resultSet = stmt.executeQuery();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return resultSet;
 	}
 
-	public int executeProcedure(CallableStatement cs) {
-
-		try {
-			return cs.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return 0;
-
+	public void closeConnectionGetAll() {
+		closeConnection();
 	}
-
+	
+	
+	
 }

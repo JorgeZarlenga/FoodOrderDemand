@@ -36,14 +36,6 @@
 				<input type="text" name="numero-logradouro" id="id-numero-logradouro">
 			</div>
 			<div>
-				<label for="id-hora-inicio-funcionamento">Hora de início do funcionamento:</label>
-				<input type="time" name="hora-inicio-funcionamento" id="id-hora-inicio-funcionamento">
-			</div>
-			<div>
-				<label for="id-hora-termino-funcionamento">Hora de término do funcionamento:</label>
-				<input type="time" name="hora-termino-funcionamento" id="id-hora-inicio-funcionamento">
-			</div>
-			<div>
 				<label for="id-categoria">Categoria:</label>
 				<input type="text" name="categoria" id="id-categoria">
 			</div>

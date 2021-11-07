@@ -26,12 +26,12 @@ public class RestauranteExibirController extends HttpServlet {
 		
     	//Java
 		RestauranteBusiness restauranteBusiness = new RestauranteBusiness();
-		List<Restaurante> listaRestaurantes = restauranteBusiness.listarTodos();
+		/*List<Restaurante> listaRestaurantes = restauranteBusiness.listarTodos();
 		
 		System.out.println("LISTA: " + listaRestaurantes);
 		
 		//Web
-		request.setAttribute("listaRestaurantes", listaRestaurantes);
+		request.setAttribute("listaRestaurantes", listaRestaurantes);*/
 		RequestDispatcher rd = request.getRequestDispatcher("listaRestaurantes.jsp");  
 		rd.forward(request, response);
 	}
