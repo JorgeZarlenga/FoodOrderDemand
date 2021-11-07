@@ -2,6 +2,9 @@ package br.com.fiap.foodOrderDemand.model;
 
 import java.io.Serializable;
 import java.sql.Time;
+import java.util.List;
+
+import br.com.fiap.foodOrderDemand.dao.RestauranteDAO;
 
 /**
  * Classe que abstrai o Restaurante
@@ -145,7 +148,32 @@ public class Restaurante implements Serializable {
 
 	// Metodos CRUD:
 
-	
+	public int adicionaRestaurante() {
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.add(this);
+	}
+
+	public int alteraRestaurante() {
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.update(this);
+	}
+
+	public int deletaRestaurante(int codigo) {
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.delete(codigo);
+	}
+
+	public List<Restaurante> visualizarRestaurante(){
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.getAll();
+	}
+
+
+	public Restaurante selecionaRestaurante(int id) {
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.getById(id);
+	}
+
 	
 	// Metodo toString:
 

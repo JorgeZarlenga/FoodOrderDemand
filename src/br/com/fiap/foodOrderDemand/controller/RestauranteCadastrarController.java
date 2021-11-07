@@ -16,15 +16,26 @@ import br.com.fiap.foodOrderDemand.model.Restaurante;
 @WebServlet("/cadastrarRestaurante")
 public class RestauranteCadastrarController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public RestauranteCadastrarController() {
-        super();
-    }
 
-    @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+	public RestauranteCadastrarController() {
+		super();
+	}
 
-		RequestDispatcher rd = request.getRequestDispatcher("cadastrarRestaurante.jsp");  
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		RequestDispatcher rd = request.getRequestDispatcher("cadastrarRestaurante.jsp");
+		rd.forward(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		System.out.println("Request: " + request);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("listaRestaurantes.jsp");
 		rd.forward(request, response);
 	}
 }

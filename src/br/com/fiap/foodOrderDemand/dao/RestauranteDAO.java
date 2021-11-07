@@ -11,7 +11,7 @@ import br.com.fiap.foodOrderDemand.model.Restaurante;
 public class RestauranteDAO implements IDataHandler<Restaurante> {
 
 	@Override
-	public List<?> getAll() {
+	public List<Restaurante> getAll() {
 
 		DAO dao = new DAO();
 		List<Restaurante> listP = new ArrayList<Restaurante>();
@@ -88,7 +88,7 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 			java.sql.Date data = new java.sql.Date(new java.util.Date().getTime());
 			PreparedStatement stmt = dao.getConnection().prepareStatement(
 					"INSERT INTO T_RESTAURANTE(CD_RESTAURANTE, NM_RESTAURANTE, NR_CEP, NR_LOGRADOURO, HR_INICIO, HR_TERMINO, NM_CATEGORIA, NR_AVALIACAO, "
-							+ "NR_COZINHEIROS, NR_ENTREGADORES, NR_RAIO) VALUES (CD_RESTAURANTE.NEXTVAL,?,?,?,?,?,?,?,?,?,?)");
+					+ "NR_COZINHEIROS, NR_ENTREGADORES, NR_RAIO) VALUES (CD_RESTAURANTE.NEXTVAL,?,?,?,?,?,?,?,?,?,?)");
 			stmt.setString(1, obj.getNomeRestaurante());
 			stmt.setString(2, obj.getNumeroCep());
 			stmt.setInt(3, obj.getNumeroLogradouro());
