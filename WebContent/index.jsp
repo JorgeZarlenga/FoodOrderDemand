@@ -20,7 +20,7 @@
   </head>
 <body>
 
-	<div class="container">		
+	<div class="container" class="home">		
 		
 		<h1>Cadastro de Restaurante</h1>
 		<form action="exibirRestaurante" method="post">
