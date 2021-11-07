@@ -22,12 +22,12 @@
 
 	<div class="container">
 	
-		<h1>Restaurantes</h1>
+		<h1 class="mt-5 mb-4">Restaurantes</h1>
 	
-		<a href="cadastrarRestaurante" class="btn btn-primary">Novo Restaurante</a>
+		<a href="cadastrarRestaurante" class="btn btn-primary mb-3">Novo Restaurante</a>
 		
 		
-		<table class="table">
+		<table class="table table-hover align-middle">
 			<thead>
 				<tr>
 					<th>Nome</th>
@@ -36,16 +36,17 @@
 			</thead>
 			<tbody>
 				<c:forEach items="${listaRestaurantes}" var="restaurante">
-					<tr>
-						<td>${restaurante.nomeRestaurante}</td>
-						<td>${restaurante.numeroCep}</td>
-						<td>
-							<a href="#" class="btn btn-success">Detalhes</a>
-							<a href="#" class="btn btn-danger">Excluir</a>
-							<a href="#" class="btn btn-info">Editar</a>
-							<a href="#" class="btn btn-info">Insights</a>
-						</td>
-					</tr>
+					<div class="d-flex justify-content-between">
+						<tr>
+							<td>${restaurante.nomeRestaurante}</td>
+							<td>${restaurante.numeroCep}</td>
+							<td class="d-flex justify-content-end">
+								<a href="#" class="btn btn-success me-2">Detalhes</a>
+								<a href="#" class="btn btn-info me-2">Editar</a>
+								<a href="#" class="btn btn-danger me-2">Excluir</a>
+							</td>
+						</tr>
+					</div>
 				</c:forEach>
 			</tbody>
 		</table>
