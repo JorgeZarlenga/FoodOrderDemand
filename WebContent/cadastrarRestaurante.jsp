@@ -21,7 +21,7 @@
 	<div class="container">		
 		<h1 class="mt-5 mb-4">Cadastro de Restaurante</h1>
 		<a href="listarRestaurantes" class="btn btn-light">Voltar</a>
-		<form action="exibirRestaurante" method="get">
+		<form action="cadastrarRestaurante" method="post">
 			<div class="d-flex flex-column bd-highlight mb-3 col-sm-7">
 				<label for="id-nome-restaurante" class="mt-3">Nome do Restaurante:</label>
 				<input class ="form-control form-control-sm mt-2"type="text" name="nome-restaurante" id="id-nome-restaurante" width="400px">
@@ -32,7 +32,7 @@
 				</div>
 			<div>
 				<div class="col-sm-3" >
-					<label class="mb-2" for="id-numero-logradouro">NÃºmero:</label>
+					<label class="mb-2" for="id-numero-logradouro">Número:</label>
 					<input class="form-control form-control-sm mb-3" type="text" name="numero-logradouro" id="id-numero-logradouro">
 				</div>	
 			</div>
@@ -48,7 +48,7 @@
 				 </datalist>
 			</div>
 			<div class="col-sm-2">
-				<label class="mb-2" for="id-avaliacao">AvaliaÃ§Ã£o (0 - 10):</label>
+				<label class="mb-2" for="id-avaliacao">Avaliação (0 - 10):</label>
 				<input class="form-control form-control-sm mb-3" type="text" name="avaliacao" id="id-avaliacao">
 			</div>
 			<div class="col-sm-2">
@@ -60,7 +60,7 @@
 				<input class="form-control form-control-sm mb-3" type="text" name="quantidade-entregadores" id="id-quantidade-entregadores">
 			</div>
 			<div class="col-sm-2">
-				<label class="mb-2" for="id-raio-atuacao-km">Raio de atuaÃ§Ã£o (km):</label>
+				<label class="mb-2" for="id-raio-atuacao-km">Raio de atuação (km):</label>
 				<input class="form-control form-control-sm mb-3" type="text" name="raio-atuacao-km" id="id-raio-atuacao-km">
 			</div>
 			<input type="submit" class="btn btn-success mt-3" value="Cadastrar">
