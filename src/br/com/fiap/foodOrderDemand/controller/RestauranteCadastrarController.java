@@ -1,7 +1,7 @@
 package br.com.fiap.foodOrderDemand.controller;
 
 import java.io.IOException;
-import java.util.List;
+import java.time.LocalTime;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,16 +15,37 @@ import br.com.fiap.foodOrderDemand.model.Restaurante;
 
 @WebServlet("/cadastrarRestaurante")
 public class RestauranteCadastrarController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     public RestauranteCadastrarController() {
         super();
     }
 
     @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-		RequestDispatcher rd = request.getRequestDispatcher("cadastrarRestaurante.jsp");  
-		rd.forward(request, response);
-	}
+        RequestDispatcher rd = request.getRequestDispatcher("cadastrarRestaurante.jsp");
+        rd.forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        Restaurante restaurante = new Restaurante();
+        restaurante.setNomeRestaurante(request.getParameter("nome-restaurante"));
+        restaurante.setNumeroCep(request.getParameter("cep"));
+        restaurante.setNumeroLogradouro(request.getParameter("numero-logradouro"));
+        restaurante.setCategoriaRestaurante(request.getParameter("categoria"));
+        restaurante.setAvaliacao(Integer.parseInt(request.getParameter("avaliacao")));
+        restaurante.setQuantidadeCozinheiros(Integer.parseInt(request.getParameter("quantidade-cozinheiros")));
+        restaurante.setQuantidadeEntregadores(Integer.parseInt(request.getParameter("quantidade-entregadores")));
+        restaurante.setRaioAtuacaoKm(Integer.parseInt(request.getParameter("raio-atuacao-km")));
+
+        RestauranteBusiness rb = new RestauranteBusiness();
+        rb.cadastrar(restaurante);
+        
+        RequestDispatcher rd = request.getRequestDispatcher("listaRestaurantes.jsp");
+        rd.forward(request, response);
+    }
 }

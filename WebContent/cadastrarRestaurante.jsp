@@ -32,7 +32,7 @@
 				</div>
 			<div>
 				<div class="col-sm-3" >
-					<label class="mb-2" for="id-numero-logradouro">Número:</label>
+					<label class="mb-2" for="id-numero-logradouro">NÃºmero:</label>
 					<input class="form-control form-control-sm mb-3" type="text" name="numero-logradouro" id="id-numero-logradouro">
 				</div>	
 			</div>
@@ -48,7 +48,7 @@
 				 </datalist>
 			</div>
 			<div class="col-sm-2">
-				<label class="mb-2" for="id-avaliacao">Avaliação (0 - 10):</label>
+				<label class="mb-2" for="id-avaliacao">AvaliaÃ§Ã£o (0 - 10):</label>
 				<input class="form-control form-control-sm mb-3" type="text" name="avaliacao" id="id-avaliacao">
 			</div>
 			<div class="col-sm-2">
@@ -60,7 +60,7 @@
 				<input class="form-control form-control-sm mb-3" type="text" name="quantidade-entregadores" id="id-quantidade-entregadores">
 			</div>
 			<div class="col-sm-2">
-				<label class="mb-2" for="id-raio-atuacao-km">Raio de atuação (km):</label>
+				<label class="mb-2" for="id-raio-atuacao-km">Raio de atuaÃ§Ã£o (km):</label>
 				<input class="form-control form-control-sm mb-3" type="text" name="raio-atuacao-km" id="id-raio-atuacao-km">
 			</div>
 			<input type="submit" class="btn btn-success mt-3" value="Cadastrar">

@@ -1,7 +1,11 @@
 package br.com.fiap.foodOrderDemand.model;
 
+
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.List;
+
+import br.com.fiap.foodOrderDemand.dao.RestauranteDAO;
 
 /**
  * Classe que abstrai o Restaurante
@@ -19,9 +23,7 @@ public class Restaurante implements Serializable {
 	private int codRestaurante;
 	private String nomeRestaurante;
 	private String numeroCep;
-	private int numeroLogradouro;
-	private LocalDateTime horaInicioFuncionamento;
-	private LocalDateTime horaTerminoFuncionamento;
+	private String numeroLogradouro;
 	private String categoriaRestaurante;
 	private int avaliacao;
 	private int quantidadeCozinheiros;
@@ -36,16 +38,13 @@ public class Restaurante implements Serializable {
 
 	// Construtor que recebe todos parametros:
 
-	public Restaurante(int codRestaurante, String nomeRestaurante, String numeroCep, int numeroLogradouro,
-			LocalDateTime horaInicioFuncionamento, LocalDateTime horaTerminoFuncionamento, String categoriaRestaurante, int avaliacao,
+	public Restaurante(int codRestaurante, String nomeRestaurante, String numeroCep, String numeroLogradouro, String categoriaRestaurante, int avaliacao,
 			int quantidadeCozinheiros, int quantidadeEntregadores, double raioAtuacaoKm) {
 		super();
 		this.codRestaurante = codRestaurante;
 		this.nomeRestaurante = nomeRestaurante;
 		this.numeroCep = numeroCep;
 		this.numeroLogradouro = numeroLogradouro;
-		this.horaInicioFuncionamento = horaInicioFuncionamento;
-		this.horaTerminoFuncionamento = horaTerminoFuncionamento;
 		this.categoriaRestaurante = categoriaRestaurante;
 		this.avaliacao = avaliacao;
 		this.quantidadeCozinheiros = quantidadeCozinheiros;
@@ -79,28 +78,12 @@ public class Restaurante implements Serializable {
 		this.numeroCep = numeroCep;
 	}
 
-	public int getNumeroLogradouro() {
+	public String getNumeroLogradouro() {
 		return numeroLogradouro;
 	}
 
-	public void setNumeroLogradouro(int numeroLogradouro) {
+	public void setNumeroLogradouro(String numeroLogradouro) {
 		this.numeroLogradouro = numeroLogradouro;
-	}
-
-	public LocalDateTime getHoraInicioFuncionamento() {
-		return horaInicioFuncionamento;
-	}
-
-	public void setHoraInicioFuncionamento(LocalDateTime horaInicioFuncionamento) {
-		this.horaInicioFuncionamento = horaInicioFuncionamento;
-	}
-
-	public LocalDateTime getHoraTerminoFuncionamento() {
-		return horaTerminoFuncionamento;
-	}
-
-	public void setHoraTerminoFuncionamento(LocalDateTime horaTerminoFuncionamento) {
-		this.horaTerminoFuncionamento = horaTerminoFuncionamento;
 	}
 
 	public String getCategoriaRestaurante() {
@@ -145,7 +128,32 @@ public class Restaurante implements Serializable {
 
 	// Metodos CRUD:
 
-	
+	public int adicionaRestaurante() {
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.add(this);
+	}
+
+	public int alteraRestaurante() {
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.update(this);
+	}
+
+	public int deletaRestaurante(int codigo) {
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.delete(codigo);
+	}
+
+	public List<Restaurante> visualizarRestaurante(){
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.getAll();
+	}
+
+
+	public Restaurante selecionaRestaurante(int id) {
+		RestauranteDAO aDao = new RestauranteDAO();
+		return aDao.getById(id);
+	}
+
 	
 	// Metodo toString:
 
@@ -156,5 +164,8 @@ public class Restaurante implements Serializable {
 				+ categoriaRestaurante + ", avaliacao=" + avaliacao + ", quantidadeCozinheiros=" + quantidadeCozinheiros
 				+ ", quantidadeEntregadores=" + quantidadeEntregadores + ", raioAtuacaoKm=" + raioAtuacaoKm + "]";
 	}
+
+	
+
 
 }
