@@ -27,8 +27,6 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 				r.setNomeRestaurante(result.getString("NM_RESTAURANTE"));
 				r.setNumeroCep(result.getString("NR_CEP"));
 				r.setNumeroLogradouro(result.getString("NR_LOGRADOURO"));
-				// r.setHoraInicioFuncionamento(result.getTime("HR_INICIO"));
-				// r.setHoraTerminoFuncionamento(result.getTime("HR_TERMINO"));
 				r.setCategoriaRestaurante(result.getString("NM_CATEGORIA"));
 				r.setAvaliacao(result.getInt("NR_AVALIACAO"));
 				r.setQuantidadeCozinheiros(result.getInt("NR_COZINHEIROS"));
@@ -62,8 +60,6 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 				r.setNomeRestaurante(result.getString("NM_RESTAURANTE"));
 				r.setNumeroCep(result.getString("NR_CEP"));
 				r.setNumeroLogradouro(result.getString("NR_LOGRADOURO"));
-				// r.setHoraInicioFuncionamento(result.getTime("HR_INICIO"));
-				// r.setHoraTerminoFuncionamento(result.getTime("HR_TERMINO"));
 				r.setCategoriaRestaurante(result.getString("NM_CATEGORIA"));
 				r.setAvaliacao(result.getInt("NR_AVALIACAO"));
 				r.setQuantidadeCozinheiros(result.getInt("NR_COZINHEIROS"));
@@ -93,8 +89,6 @@ public class RestauranteDAO implements IDataHandler<Restaurante> {
 			stmt.setString(2, obj.getNomeRestaurante());
 			stmt.setString(3, obj.getNumeroCep());
 			stmt.setString(4, obj.getNumeroLogradouro());
-			// stmt.setTime(4, obj.getHoraInicioFuncionamento());
-			// stmt.setTime(5, obj.getHoraTerminoFuncionamento());
 			stmt.setString(5, obj.getCategoriaRestaurante());
 			stmt.setInt(6, obj.getAvaliacao());
 			stmt.setInt(7, obj.getQuantidadeCozinheiros());

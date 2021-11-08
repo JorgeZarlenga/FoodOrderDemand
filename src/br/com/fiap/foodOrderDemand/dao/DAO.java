@@ -27,7 +27,7 @@ public class DAO {
 	// Respons�vel por abrir a conex�o
 	private void openConnection() {
 		try {
-			this.connection = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "RM86831", "020996");
+			this.connection = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "RM87129", "060899");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
